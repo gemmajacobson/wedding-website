@@ -1,5 +1,5 @@
 /* =====================================================================
-   Dani & Benji — shared behaviour
+   Dani & Benji – shared behaviour
    Vanilla JS, no dependencies. Loaded with `defer` on every page.
    ===================================================================== */
 (function () {
@@ -46,8 +46,8 @@
     var tick = function () {
       var diff = target - Date.now();
       if (diff <= 0) {
-        cd.innerHTML = '<p class="hero__hebrew" style="font-size:1.6rem">' +
-          "Mazal tov — we’re married! 🍾</p>";
+        cd.innerHTML = '<p class="hero__tagline" style="font-size:1.6rem">' +
+          "Mazal tov – we’re married!</p>";
         clearInterval(timer);
         return;
       }

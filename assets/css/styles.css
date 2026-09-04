@@ -1,12 +1,12 @@
 /* =====================================================================
-   Dani & Benji — 03.01.2027
-   Warm Mediterranean wedding site — shared styles
+   Dani & Benji – 03.01.2027
+   Warm Mediterranean wedding site – shared styles
    Palette, type and components live here. Tune the tokens in :root.
    ===================================================================== */
 
 /* ---------- Design tokens ---------- */
 :root {
-  /* Cool, elegant palette — deep teal-green & dusty blue on soft cream */
+  /* Cool, elegant palette – deep teal-green & dusty blue on soft cream */
   --sand:        #F5F3EC;  /* page background (soft cream) */
   --sand-deep:   #E7EBE4;  /* alt sections (pale sage) */
   --shell:       #FCFBF6;  /* cards */
@@ -275,7 +275,15 @@ section { padding-block: clamp(3rem, 8vw, 6rem); }
   margin-bottom: 1.8rem;
 }
 .hero__meta span { display: block; }
-.hero__meta .date { margin-bottom: 0.4rem; }
+.hero__meta .date { margin-bottom: 0.15rem; }
+.hero__meta .date-heb {
+  font-family: var(--serif);
+  text-transform: none;
+  letter-spacing: 0;
+  font-size: 1.05rem;
+  opacity: 0.9;
+  margin-bottom: 0.9rem;
+}
 .hero__tagline { font-family: var(--serif); font-style: italic; font-size: 1.3rem; letter-spacing: 0.02em; opacity: 0.95; margin-bottom: 0; }
 
 /* ---------- Countdown ---------- */
@@ -425,7 +433,7 @@ section { padding-block: clamp(3rem, 8vw, 6rem); }
 .day.wedding .day__date { color: var(--clay-deep); }
 .day h3 { margin-bottom: 0.8rem; }
 .event + .event { margin-top: 1rem; padding-top: 1rem; border-top: 1px dashed var(--line); }
-.event > strong { display: block; }  /* label line only — not inline bold inside paragraphs */
+.event > strong { display: block; }  /* label line only – not inline bold inside paragraphs */
 .dresscode { margin-top: 0.9rem; font-size: 0.92rem; color: var(--ink-soft); }
 .dresscode b { font-family: var(--display); font-weight: 400; color: var(--clay-deep); text-transform: uppercase; letter-spacing: 0.16em; font-size: 0.74rem; }
 

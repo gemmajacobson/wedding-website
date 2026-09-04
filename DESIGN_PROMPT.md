@@ -20,9 +20,9 @@ You are a senior web designer and front-end developer. Design and build a **wedd
 - Use a small set of Google Fonts (or system fallbacks) — see typography.
 
 ## Aesthetic
-- **Warm Mediterranean / Tel Aviv** feel: sun-washed, relaxed, inviting, celebratory — matching the couple's fun, casual voice.
-- You have latitude to choose a **cohesive warm-Mediterranean palette** (think warm sandy neutrals, a clay/terracotta or warm accent, and a Mediterranean sea blue or olive — pick what feels elegant and photo-friendly). Define it as CSS custom properties so it's easy to retune. Support a tasteful light theme; a subtle dark mode is a nice-to-have, not required.
-- **Typography:** a characterful, elegant **serif for headings** (names, page titles, section headers) paired with a **clean, highly readable sans-serif for body text**.
+- **Elegant, editorial, understated** — refined and timeless rather than playful. Lots of white space, fine hairlines, minimal ornament. Avoid a default/"AI" look: no emoji, no rounded candy buttons, no bright accents.
+- **Cool palette on cream:** soft off-white/cream background, deep teal-green as the primary accent, a dusty blue as secondary, near-black deep-green text. Define it as CSS custom properties so it's easy to retune.
+- **Typography:** a fine **calligraphy script** for the top flourish (e.g. Pinyon Script), a classical all-caps **serif for names/headings** with wide letter-spacing (e.g. Marcellus), and a refined **serif for body** (e.g. EB Garamond). Small labels/eyebrows/buttons in the display serif, uppercase and letter-spaced.
 - Subtle **Hebrew / RTL accents** as decorative flourishes (e.g. a small Hebrew word or motif in section dividers, tasteful use of Israeli/Mediterranean motifs like tiles, citrus, waves, or the TLV coastline). English is the primary language throughout. Keep it elegant, never kitschy.
 - **Photography:** the couple will supply real photos. Design around a strong hero image on the Home page and use photos elsewhere; where a photo isn't available yet, leave a clearly-marked, correctly-sized placeholder (e.g. `<!-- PHOTO: couple hero, landscape -->`) so they're easy to swap in.
 

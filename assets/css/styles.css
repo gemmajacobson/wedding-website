@@ -6,27 +6,30 @@
 
 /* ---------- Design tokens ---------- */
 :root {
-  /* Warm Mediterranean palette */
-  --sand:        #FBF6EE;  /* page background */
-  --sand-deep:   #F2E7D6;  /* alt sections */
-  --shell:       #FFFFFF;  /* cards */
-  --ink:         #3A2E28;  /* primary text (warm dark brown) */
-  --ink-soft:    #6B5D54;  /* secondary text */
-  --clay:        #BB6a4d;  /* terracotta accent */
-  --clay-deep:   #9E5238;  /* hover / strong accent */
-  --sea:         #4E8A88;  /* Mediterranean teal */
-  --sea-deep:    #376260;
-  --gold:        #C7A15B;  /* small highlights */
-  --line:        #E4D6C3;  /* hairlines / borders */
+  /* Cool, elegant palette — deep teal-green & dusty blue on soft cream */
+  --sand:        #F5F3EC;  /* page background (soft cream) */
+  --sand-deep:   #E7EBE4;  /* alt sections (pale sage) */
+  --shell:       #FCFBF6;  /* cards */
+  --ink:         #21322F;  /* primary text (deep green-black) */
+  --ink-soft:    #56655F;  /* secondary text */
+  --clay:        #2E5F57;  /* primary accent (deep teal-green) */
+  --clay-deep:   #21453F;  /* hover / strong accent */
+  --sea:         #5E8598;  /* dusty blue secondary */
+  --sea-deep:    #3F6070;
+  --gold:        #90A79A;  /* soft eucalyptus highlight (hairlines, accents) */
+  --line:        #D7D9CE;  /* hairlines / borders */
 
   --maxw: 1120px;
   --gutter: clamp(1.1rem, 4vw, 3rem);
-  --radius: 14px;
-  --shadow: 0 12px 34px rgba(93, 63, 45, 0.12);
-  --shadow-sm: 0 4px 14px rgba(93, 63, 45, 0.10);
+  --radius: 6px;
+  --shadow: 0 14px 40px rgba(33, 50, 47, 0.09);
+  --shadow-sm: 0 4px 16px rgba(33, 50, 47, 0.06);
 
-  --serif: "Cormorant Garamond", Georgia, "Times New Roman", serif;
-  --sans: "Mulish", "Helvetica Neue", Arial, system-ui, sans-serif;
+  /* Type: classical serif display, fine script flourish, refined serif body */
+  --script: "Pinyon Script", "Segoe Script", cursive;
+  --display: "Marcellus", Georgia, "Times New Roman", serif;
+  --serif: "EB Garamond", Georgia, "Times New Roman", serif;
+  --sans: "EB Garamond", Georgia, "Times New Roman", serif;
 }
 
 /* ---------- Base ---------- */
@@ -38,9 +41,9 @@ body {
   margin: 0;
   background: var(--sand);
   color: var(--ink);
-  font-family: var(--sans);
-  font-size: 1.02rem;
-  line-height: 1.7;
+  font-family: var(--serif);
+  font-size: 1.12rem;
+  line-height: 1.75;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -50,16 +53,26 @@ a { color: var(--clay-deep); text-decoration-thickness: 1px; text-underline-offs
 a:hover { color: var(--clay); }
 
 h1, h2, h3, h4 {
-  font-family: var(--serif);
-  font-weight: 600;
-  line-height: 1.08;
+  font-family: var(--display);
+  font-weight: 400;
+  line-height: 1.12;
   color: var(--ink);
   margin: 0 0 0.5em;
-  letter-spacing: 0.2px;
+  letter-spacing: 0.5px;
 }
-h1 { font-size: clamp(2.6rem, 7vw, 5rem); }
-h2 { font-size: clamp(1.9rem, 4.4vw, 3rem); }
-h3 { font-size: clamp(1.35rem, 2.6vw, 1.8rem); }
+h1 { font-size: clamp(2.3rem, 6vw, 4rem); text-transform: uppercase; letter-spacing: 0.08em; }
+h2 { font-size: clamp(1.7rem, 4vw, 2.6rem); }
+h3 { font-size: clamp(1.3rem, 2.4vw, 1.7rem); }
+
+/* Fine calligraphy flourish */
+.script {
+  font-family: var(--script);
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: 0;
+  color: var(--ink);
+  line-height: 1;
+}
 
 p { margin: 0 0 1.1em; }
 
@@ -69,16 +82,16 @@ section { padding-block: clamp(3rem, 8vw, 6rem); }
 
 /* Eyebrow / small caps label with optional Hebrew flourish */
 .eyebrow {
-  font-family: var(--sans);
+  font-family: var(--display);
   text-transform: uppercase;
-  letter-spacing: 0.28em;
-  font-size: 0.72rem;
-  font-weight: 800;
+  letter-spacing: 0.34em;
+  font-size: 0.74rem;
+  font-weight: 400;
   color: var(--clay);
-  margin: 0 0 0.9rem;
+  margin: 0 0 1rem;
   display: inline-flex;
   align-items: center;
-  gap: 0.6rem;
+  gap: 0.7rem;
 }
 .eyebrow::before,
 .eyebrow::after {
@@ -100,21 +113,21 @@ section { padding-block: clamp(3rem, 8vw, 6rem); }
 /* ---------- Buttons ---------- */
 .btn {
   display: inline-block;
-  font-family: var(--sans);
-  font-weight: 800;
-  letter-spacing: 0.04em;
+  font-family: var(--display);
+  font-weight: 400;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
-  font-size: 0.8rem;
-  padding: 0.85rem 1.7rem;
-  border-radius: 999px;
-  border: 1.5px solid var(--clay);
+  font-size: 0.78rem;
+  padding: 0.9rem 2rem;
+  border-radius: 2px;
+  border: 1px solid var(--clay);
   background: var(--clay);
   color: #fff;
   cursor: pointer;
   text-decoration: none;
-  transition: background .18s ease, color .18s ease, transform .18s ease, border-color .18s ease;
+  transition: background .2s ease, color .2s ease, transform .2s ease, border-color .2s ease;
 }
-.btn:hover { background: var(--clay-deep); border-color: var(--clay-deep); color: #fff; transform: translateY(-2px); }
+.btn:hover { background: var(--clay-deep); border-color: var(--clay-deep); color: #fff; transform: translateY(-1px); }
 .btn.ghost { background: transparent; color: var(--clay-deep); }
 .btn.ghost:hover { background: var(--clay); color: #fff; }
 
@@ -135,31 +148,34 @@ section { padding-block: clamp(3rem, 8vw, 6rem); }
   padding-block: 0.85rem;
 }
 .brand {
-  font-family: var(--serif);
+  font-family: var(--display);
   font-size: 1.5rem;
-  font-weight: 600;
+  font-weight: 400;
   color: var(--ink);
   text-decoration: none;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
   white-space: nowrap;
 }
 .brand span { color: var(--clay); }
 .nav-links {
   list-style: none;
   display: flex;
-  gap: 1.4rem;
+  gap: 1.6rem;
   margin: 0;
   padding: 0;
   align-items: center;
 }
 .nav-links a {
+  font-family: var(--display);
   color: var(--ink-soft);
   text-decoration: none;
-  font-weight: 700;
-  font-size: 0.85rem;
-  letter-spacing: 0.02em;
+  font-weight: 400;
+  font-size: 0.82rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
   padding-block: 0.3rem;
-  border-bottom: 2px solid transparent;
+  border-bottom: 1px solid transparent;
   transition: color .15s ease, border-color .15s ease;
 }
 .nav-links a:hover { color: var(--ink); }
@@ -234,24 +250,33 @@ section { padding-block: clamp(3rem, 8vw, 6rem); }
   background: linear-gradient(180deg, rgba(40,28,22,0.28) 0%, rgba(40,28,22,0.30) 45%, rgba(40,28,22,0.62) 100%);
 }
 .hero__inner { position: relative; padding: var(--gutter); max-width: 900px; }
+.hero__script {
+  font-family: var(--script);
+  color: #fff;
+  font-size: clamp(2.4rem, 7vw, 4.2rem);
+  line-height: 1;
+  margin-bottom: 0.3em;
+  text-shadow: 0 2px 24px rgba(0,0,0,0.35);
+}
 .hero h1 {
   color: #fff;
-  font-size: clamp(3rem, 10vw, 7rem);
-  margin-bottom: 0.15em;
+  font-size: clamp(2.6rem, 9vw, 6rem);
+  letter-spacing: 0.12em;
+  margin-bottom: 0.4em;
   text-shadow: 0 2px 24px rgba(0,0,0,0.28);
 }
-.hero .amp { color: var(--gold); font-style: italic; }
+.hero .amp { color: #fff; }
 .hero__meta {
-  font-family: var(--sans);
+  font-family: var(--display);
   text-transform: uppercase;
-  letter-spacing: 0.22em;
-  font-weight: 700;
-  font-size: clamp(0.75rem, 2vw, 0.95rem);
-  margin-bottom: 1.6rem;
+  letter-spacing: 0.26em;
+  font-weight: 400;
+  font-size: clamp(0.72rem, 1.8vw, 0.9rem);
+  margin-bottom: 1.8rem;
 }
 .hero__meta span { display: block; }
-.hero__meta .date { color: var(--gold); margin-bottom: 0.35rem; }
-.hero__hebrew { font-family: var(--serif); font-size: 1.4rem; letter-spacing: 0; opacity: 0.95; }
+.hero__meta .date { margin-bottom: 0.4rem; }
+.hero__tagline { font-family: var(--serif); font-style: italic; font-size: 1.3rem; letter-spacing: 0.02em; opacity: 0.95; margin-bottom: 0; }
 
 /* ---------- Countdown ---------- */
 .countdown {
@@ -268,8 +293,8 @@ section { padding-block: clamp(3rem, 8vw, 6rem); }
   min-width: 68px;
   backdrop-filter: blur(3px);
 }
-.countdown__num { font-family: var(--serif); font-size: clamp(1.6rem, 5vw, 2.6rem); line-height: 1; display: block; }
-.countdown__label { font-size: 0.62rem; text-transform: uppercase; letter-spacing: 0.18em; font-weight: 700; opacity: 0.9; }
+.countdown__num { font-family: var(--display); font-size: clamp(1.6rem, 5vw, 2.6rem); line-height: 1; display: block; }
+.countdown__label { font-family: var(--display); font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.22em; font-weight: 400; opacity: 0.9; margin-top: 0.2rem; }
 
 /* ---------- Page hero (interior pages) ---------- */
 .page-hero {
@@ -301,15 +326,16 @@ section { padding-block: clamp(3rem, 8vw, 6rem); }
 .card h3 { margin-bottom: 0.4rem; }
 .card .tag {
   display: inline-block;
-  font-size: 0.68rem;
+  font-family: var(--display);
+  font-size: 0.66rem;
   text-transform: uppercase;
-  letter-spacing: 0.14em;
-  font-weight: 800;
+  letter-spacing: 0.2em;
+  font-weight: 400;
   color: var(--sea-deep);
-  background: rgba(78,138,136,0.12);
-  border-radius: 999px;
-  padding: 0.2rem 0.7rem;
-  margin-bottom: 0.7rem;
+  background: rgba(94,133,152,0.12);
+  border-radius: 2px;
+  padding: 0.28rem 0.75rem;
+  margin-bottom: 0.8rem;
 }
 
 /* Quick-link cards (home) */
@@ -326,9 +352,9 @@ section { padding-block: clamp(3rem, 8vw, 6rem); }
   transition: transform .18s ease, box-shadow .18s ease;
 }
 .linkcard:hover { transform: translateY(-4px); box-shadow: var(--shadow); color: var(--ink); }
-.linkcard .kicker { font-size: 1.8rem; margin-bottom: 0.5rem; }
+.linkcard .kicker { font-family: var(--script); font-size: 2rem; color: var(--clay); margin-bottom: 0.3rem; line-height: 1; }
 .linkcard h3 { color: var(--clay-deep); }
-.linkcard .go { margin-top: auto; font-weight: 800; color: var(--sea-deep); font-size: 0.85rem; letter-spacing: 0.04em; }
+.linkcard .go { margin-top: auto; font-family: var(--display); text-transform: uppercase; color: var(--sea-deep); font-size: 0.74rem; letter-spacing: 0.16em; }
 
 /* ---------- Intro / letter block ---------- */
 .letter { max-width: 760px; margin-inline: auto; text-align: center; }
@@ -395,13 +421,13 @@ section { padding-block: clamp(3rem, 8vw, 6rem); }
   border-top: 5px solid var(--sea);
 }
 .day.wedding { border-top-color: var(--clay); }
-.day__date { display: block; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.2em; font-weight: 800; color: var(--sea-deep); margin-bottom: 0.25rem; }
+.day__date { display: block; font-family: var(--display); font-size: 0.74rem; text-transform: uppercase; letter-spacing: 0.24em; font-weight: 400; color: var(--sea-deep); margin-bottom: 0.4rem; }
 .day.wedding .day__date { color: var(--clay-deep); }
 .day h3 { margin-bottom: 0.8rem; }
 .event + .event { margin-top: 1rem; padding-top: 1rem; border-top: 1px dashed var(--line); }
 .event > strong { display: block; }  /* label line only — not inline bold inside paragraphs */
 .dresscode { margin-top: 0.9rem; font-size: 0.92rem; color: var(--ink-soft); }
-.dresscode b { color: var(--clay-deep); text-transform: uppercase; letter-spacing: 0.08em; font-size: 0.72rem; }
+.dresscode b { font-family: var(--display); font-weight: 400; color: var(--clay-deep); text-transform: uppercase; letter-spacing: 0.16em; font-size: 0.74rem; }
 
 /* ---------- Gallery ---------- */
 .gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 0.9rem; }
@@ -443,7 +469,7 @@ section { padding-block: clamp(3rem, 8vw, 6rem); }
   border-radius: var(--radius);
   padding: 1.3rem;
 }
-.bank h4 { font-family: var(--sans); font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; font-size: 0.78rem; color: var(--sea-deep); margin: 0 0 0.7rem; }
+.bank h4 { font-family: var(--display); font-weight: 400; text-transform: uppercase; letter-spacing: 0.18em; font-size: 0.82rem; color: var(--sea-deep); margin: 0 0 0.7rem; }
 .bank dl { display: grid; grid-template-columns: auto 1fr; gap: 0.25rem 0.8rem; margin: 0; font-size: 0.92rem; }
 .bank dt { color: var(--ink-soft); }
 .bank dd { margin: 0; font-weight: 700; word-break: break-word; }
@@ -455,12 +481,12 @@ section { padding-block: clamp(3rem, 8vw, 6rem); }
   text-align: center;
   padding-block: clamp(2.4rem, 6vw, 3.6rem);
 }
-.site-footer .names { font-family: var(--serif); font-size: 2rem; color: #fff; margin-bottom: 0.2rem; }
-.site-footer .names .amp { color: var(--gold); font-style: italic; }
+.site-footer .names { font-family: var(--display); text-transform: uppercase; letter-spacing: 0.14em; font-size: 1.7rem; color: #fff; margin-bottom: 0.3rem; }
+.site-footer .names .amp { color: #fff; }
 .site-footer .hebrew { color: var(--gold); display: block; margin: 0.4rem 0 1rem; }
-.site-footer a { color: #F0C99A; }
-.site-footer .foot-links { list-style: none; padding: 0; margin: 1rem 0 0; display: flex; flex-wrap: wrap; gap: 1rem 1.4rem; justify-content: center; }
-.site-footer .foot-links a { text-decoration: none; font-weight: 700; font-size: 0.85rem; opacity: 0.85; }
+.site-footer a { color: #C7D6CE; }
+.site-footer .foot-links { list-style: none; padding: 0; margin: 1rem 0 0; display: flex; flex-wrap: wrap; gap: 1rem 1.6rem; justify-content: center; }
+.site-footer .foot-links a { font-family: var(--display); text-transform: uppercase; text-decoration: none; font-weight: 400; font-size: 0.76rem; letter-spacing: 0.14em; opacity: 0.85; }
 .site-footer .foot-links a:hover { opacity: 1; }
 .site-footer small { display: block; margin-top: 1.4rem; opacity: 0.55; font-size: 0.75rem; }
 

@@ -274,15 +274,14 @@ section { padding-block: clamp(3rem, 8vw, 6rem); }
   font-size: clamp(0.72rem, 1.8vw, 0.9rem);
   margin-bottom: 1.8rem;
 }
-.hero__meta span { display: block; }
-.hero__meta .date { margin-bottom: 0.15rem; }
+.hero__meta > span { display: block; }
+.hero__meta .date { margin-bottom: 0.5rem; }
 .hero__meta .date-heb {
+  display: inline;
   font-family: var(--serif);
   text-transform: none;
-  letter-spacing: 0;
-  font-size: 1.05rem;
-  opacity: 0.9;
-  margin-bottom: 0.9rem;
+  letter-spacing: normal;
+  opacity: 0.92;
 }
 .hero__tagline { font-family: var(--serif); font-style: italic; font-size: 1.3rem; letter-spacing: 0.02em; opacity: 0.95; margin-bottom: 0; }
 

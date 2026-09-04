@@ -33,7 +33,7 @@ You are a senior web designer and front-end developer. Design and build a **wedd
 ## Key features
 - **Countdown timer** to the wedding (3 Jan 2027, 6:30 PM Israel time) on the Home page — live, in vanilla JS.
 - **Maps / directions:** link (or lightweight embed) to the venue Luca, the recommended hotel, and Ben Gurion Airport; consider a map or clear links for the recommended TLV spots.
-- **Embedded RSVP form (no backend):** design a native-looking form on the RSVP page that posts to a no-server service (e.g. Formspree or a Google Form action). Include: name(s), attending yes/no, number of guests, **bus sign-up (Tel Aviv → venue and back; note possible Jerusalem pickup)**, dietary requirements, and a free-text message. Leave the form `action`/endpoint as a clearly-marked TODO for the couple to paste in. Validate client-side.
+- **RSVP via embedded Google Form:** on the RSVP page, embed a Google Form in a styled `<iframe>` (leave the `src` as a clearly-marked TODO for the couple to paste in), with a fallback "open in new tab" link. The form should collect: name(s), attending yes/no, number of guests, **bus sign-up (Tel Aviv → venue and back; note possible Jerusalem pickup)**, dietary requirements, and a free-text message.
 - **Streamlined, scannable travel content:** include all the detail below, but keep it tight. Use **cards, small icons/labels, and expandable accordions** for the long lists (restaurants, cafés, "what to do"). Show must-knows up front; tuck exhaustive lists behind accordions/tabs.
 
 ## Privacy (important)

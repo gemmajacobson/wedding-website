@@ -228,7 +228,7 @@ section { padding-block: clamp(3rem, 8vw, 6rem); }
 }
 
 /* ---------- Hero ---------- */
-.hero { background: var(--sand); }
+.hero { background: var(--clay); padding-block: 0; }  /* teal fills header + photo, no gap under nav */
 .hero__top {
   background: linear-gradient(165deg, var(--clay-deep) 0%, var(--clay) 100%);
   color: #fff;
@@ -270,8 +270,8 @@ section { padding-block: clamp(3rem, 8vw, 6rem); }
 }
 .hero__tagline { font-family: var(--serif); font-style: italic; font-size: 1.3rem; letter-spacing: 0.02em; color: #fff; margin-bottom: 0; }
 
-/* Landscape photo below the coloured header */
-.hero__photo { padding: clamp(1.8rem, 4vw, 2.6rem) var(--gutter) 0; }
+/* Landscape photo below the coloured header (same teal ground) */
+.hero__photo { padding: clamp(1.8rem, 4vw, 2.6rem) var(--gutter) clamp(2.6rem, 6vw, 4rem); }
 .hero__photo img {
   display: block;
   margin-inline: auto;
@@ -484,15 +484,15 @@ section { padding-block: clamp(3rem, 8vw, 6rem); }
 
 /* ---------- Footer ---------- */
 .site-footer {
-  background: var(--ink);
-  color: #EAD9C6;
+  background: linear-gradient(165deg, var(--clay-deep) 0%, var(--clay) 100%);
+  color: rgba(255,255,255,0.82);
   text-align: center;
   padding-block: clamp(2.4rem, 6vw, 3.6rem);
 }
 .site-footer .names { font-family: var(--display); text-transform: uppercase; letter-spacing: 0.14em; font-size: 1.7rem; color: #fff; margin-bottom: 0.3rem; }
 .site-footer .names .amp { color: #fff; }
 .site-footer .hebrew { color: var(--gold); display: block; margin: 0.4rem 0 1rem; }
-.site-footer a { color: #C7D6CE; }
+.site-footer a { color: #fff; }
 .site-footer .foot-links { list-style: none; padding: 0; margin: 1rem 0 0; display: flex; flex-wrap: wrap; gap: 1rem 1.6rem; justify-content: center; }
 .site-footer .foot-links a { font-family: var(--display); text-transform: uppercase; text-decoration: none; font-weight: 400; font-size: 0.76rem; letter-spacing: 0.14em; opacity: 0.85; }
 .site-footer .foot-links a:hover { opacity: 1; }
